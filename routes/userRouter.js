@@ -3,7 +3,6 @@ const router = express.Router()
 const User = require('../models/userModel')
 const auth = require('../middlewares/auth')
 
-
 router.post('/users', async (req, res) => {
     const user = new User(req.body)
     try {
@@ -12,7 +11,6 @@ router.post('/users', async (req, res) => {
     } catch (error) {
         res.status(404).send(error)
     }
-    
 })
 
 router.get('/users', auth, async (req, res) => {
@@ -31,7 +29,7 @@ router.post('/users/login', async (req, res) => {
         console.log(token)
         res.send({user, token})
     } catch (e) {
-        res.status(400).send()
+        res.status(400).send(e)
     }
 })
 

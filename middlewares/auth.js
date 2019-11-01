@@ -13,7 +13,7 @@ const auth = async (req, res, next) => {
         //req.user = user
         next()
     } catch (e) {
-        res.send(e)
+        res.send("Please authenticate...")
     }
 } 
 
