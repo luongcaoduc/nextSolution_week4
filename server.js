@@ -11,7 +11,8 @@ mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/User', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 })
 
 app.use(express.json())
